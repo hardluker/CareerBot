@@ -130,7 +130,6 @@
                 
                 <!-- If the user likes math and is particularly analytical-->
                 <li value="MATH">
-                    <template>
                         You seem to enjoy mathematically based problems. Here are some related careers:
                         
                         <button>
@@ -148,12 +147,10 @@
                             <postback>AIENGINEER</postback>
                         </button>
                         
-                    </template>
                 </li>
                 
                 <!-- If the user likes building and solving real world problem -->
                 <li value="BUILD">
-                    <template>
                         You enjoy building things and solving real-world problems. Here are some related careers:
                         
                         <button>
@@ -171,12 +168,10 @@
                             <postback>SYSTEMSARCHITECT</postback>
                         </button>
                         
-                    </template>
                 </li>
                 
                 <!-- If the user is technical and has strong leadership skills -->
                 <li value="LEAD">
-                    <template>
                         You're a technical person with strong leadership skills. Here are some related careers:
                         
                         <button>
@@ -194,7 +189,6 @@
                             <postback>TECHNICALPROGRAMMANAGER</postback>
                         </button>
                         
-                    </template>
                 </li>
             </condition>
         </template>
