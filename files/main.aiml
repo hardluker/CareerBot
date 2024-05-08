@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+    <!-- Redirects for processing various greetings -->
+    <category>
+        <pattern>HI</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>HEY</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>HOWDY</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>WHATS UP</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>HELO</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+    
+    <!-- Displays the initial greeting and provides the user with options -->
+    <category>
+        <pattern>HELLO</pattern>
+        <template>Hello, I am the carreerbot1000. I assist users in many
+        ways to ensure they can find the ideal career related to computer science.
+        
+        <button>
+            <text>Help me find a career</text>
+            <postback>HELPCAREER</postback>
+        </button>
+        
+        <button>
+            <text>What careers are there?</text>
+            <postback>WHATCAREERS</postback>
+        </button>
+        
+        
+        </template>
+    </category>
+    
+    <!-- A list of all careers -->
+    <category>
+        <pattern>WHATCAREERS</pattern>
+        <template>
+            There are many! Select an option for more information:
+            
+            <button>
+                <text>--GO BACK--</text>
+                <postback>HELLO</postback>
+            </button>
+            
+            <button>
+                <text>Computer Scientist</text>
+                <postback>COMPUTERSCIENTIST</postback>
+            </button>
+            
+            <button>
+                <text>AI Engineer</text>
+                <postback>AIENGINEER</postback>
+            </button>
+            
+            <button>
+                <text>Software Developer</text>
+                <postback>SOFTWAREDEVELOPER</postback>
+            </button>
+            
+            <button>
+                <text>Systems Architect</text>
+                <postback>SYSTEMSARCHITECT</postback>
+            </button>
+            
+            <button>
+                <text>IT Project Manager</text>
+                <postback>ITPROJECTMANAGER</postback>
+            </button>
+            
+            <button>
+                <text>Technical Program Manager</text>
+                <postback>TECHNICALPROGRAMMANAGER</postback>
+            </button>
+        
+        </template>
+        
+    </category>
+    
+    <!-- Options for helping the user find an ideal career path -->
+    <category>
+        <pattern>HELPCAREER</pattern>
+        <template>
+            Okay! To help you determine your ideal career choice,
+            select the category that best fits your personality:
+            
+            <button>
+                <text>--GO BACK--</text>
+                <postback>HELLO</postback>
+            </button>
+            
+            <button>
+                <text>I am analytical and enjoy solving mathematically based problems</text>
+                <postback>I LIKE MATH</postback>
+            </button>
+            
+            <button>
+                <text>I really like building things and creating solutions to real world problems</text>
+                <postback>I LIKE BUILD</postback>
+            </button>
+            
+            <button>
+                <text>I am a technical person with strong leadership skills.</text>
+                <postback>I LIKE LEAD</postback>
+            </button>
+        </template>
+    </category>
+    
+    <!-- Displaying the career types based on the user input -->
+    <category>
+        <pattern>I LIKE *</pattern>
+        <template>
+            <think><set name="preference"><star/></set></think>
+            <condition name="preference">
+                
+                <!-- If the user likes math and is particularly analytical-->
+                <li value="MATH">
+                    <template>
+                        You seem to enjoy mathematically based problems. Here are some related careers:
+                        
+                        <button>
+                            <text>--GO BACK--</text>
+                            <postback>HELLO</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Computer Scientist</text>
+                            <postback>COMPUTERSCIENTIST</postback>
+                        </button>
+                        
+                         <button>
+                            <text>AI Engineer</text>
+                            <postback>AIENGINEER</postback>
+                        </button>
+                        
+                    </template>
+                </li>
+                
+                <!-- If the user likes building and solving real world problem -->
+                <li value="BUILD">
+                    <template>
+                        You enjoy building things and solving real-world problems. Here are some related careers:
+                        
+                        <button>
+                            <text>--GO BACK--</text>
+                            <postback>HELLO</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Software Developer</text>
+                            <postback>SOFTWAREDEVELOPER</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Systems Architect</text>
+                            <postback>SYSTEMSARCHITECT</postback>
+                        </button>
+                        
+                    </template>
+                </li>
+                
+                <!-- If the user is technical and has strong leadership skills -->
+                <li value="LEAD">
+                    <template>
+                        You're a technical person with strong leadership skills. Here are some related careers:
+                        
+                        <button>
+                            <text>--GO BACK--</text>
+                            <postback>HELLO</postback>
+                        </button>
+                        
+                        <button>
+                            <text>IT Project Manager</text>
+                            <postback>ITPROJECTMANAGER</postback>
+                        </button>
+                        
+                        <button>
+                            <text>Technical Program Manager</text>
+                            <postback>TECHNICALPROGRAMMANAGER</postback>
+                        </button>
+                        
+                    </template>
+                </li>
+            </condition>
+        </template>
+    
+    </category>
+    
+    <!-- If the user selects Computer Scientist -->
+    <category>
+        <pattern>COMPUTERSCIENTIST</pattern>
+        <template>
+            Computer scientists are reasearching specialists who utilize algorithms to solve problems of many different categories.
+            <br/>
+            USA Median Salary 2023: $145,080
+            
+            <button>
+                <text>--GO BACK--</text>
+                <postback>HELLO</postback>
+            </button>
+            
+            <button>
+                <text>U.S Bureau Of Labor Statistics Page</text>
+                <url>https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm</url>
+            </button>
+        </template>
+    </category>
+    
+    <!-- If the user selects AI ENGINEER -->
+    <category>
+        <pattern>AIENGINEER</pattern>
+        <template>
+            AI engineers design, build, and train AI models to solve complex problems.
+            <br/>
+            USA Median Salary 2023: $106,306
+            
+            <button>
+                <text>--GO BACK--</text>
+                <postback>HELLO</postback>
+            </button>
+            
+            <button>
+                <text>ZipRecruiter Job Description page</text>
+                <url>https://www.ziprecruiter.com/Jobs/Artificial-Intelligence-Engineer</url>
+            </button>
+            
+        </template>
+    </category>
+    
+    <!-- If the user selects Software Developer -->
+    <category>
+        <pattern>SOFTWAREDEVELOPER</pattern>
+        <template>
+            Software developers use computer programming, project management, and coordination skills.
+            <br/>
+            They develop software to solve real world business problems. 
+            <br/>
+            USA Median Salary 2023: $130,160
+            
+            <button>
+                <text>--GO BACK--</text>
+                <postback>HELLO</postback>
+            </button>
+            
+            <button>
+                <text>U.S Bureau Of Labor Statistics Page</text>
+                <url>https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm</url>
+            </button>
+            
+        </template>
+    </category>
+    
+    <!-- If the user selects Systems Architect -->
+    <category>
+        <pattern>SYSTEMSARCHITECT</pattern>
+        <template>
+            Systems Architects design complex infrastructure for systems such as networks and databases.
+            <br/>
+            USA Median Salary 2023: $224,334
+            
+            <button>
+                <text>--GO BACK--</text>
+                <postback>HELLO</postback>
+            </button>
+            
+            <button>
+                <text>ZipRecruiter Job Description page</text>
+                <url>https://www.ziprecruiter.com/Jobs/Systems-Architect</url>
+            </button>
+            
+        </template>
+    </category>
+    
+    <!-- If the user selects IT Project Manager -->
+    <category>
+        <pattern>ITPROJECTMANAGER</pattern>
+        <template>
+            IT project managers oversee IT related projects. Generally the integration of networking and other IT infrastructure.
+            <br/>
+            USA Median Salary 2023: $113,676
+            
+            <button>
+                <text>--GO BACK--</text>
+                <postback>HELLO</postback>
+            </button>
+            
+            <button>
+                <text>ZipRecruiter Job Description page</text>
+                <url>https://www.ziprecruiter.com/Salaries/It-Project-Manager-Salary</url>
+            </button>
+            
+        </template>
+    </category>
+    
+    <!-- If the user selects Technical Program Manaer -->
+    <category>
+        <pattern>TECHNICALPROGRAMMANAGER</pattern>
+        <template>
+            Technical program managers utilize leadership skills to oversee the development of complex software projects.
+            <br/>
+            USA Median Salary 2023: $145,648
+            
+            <button>
+                <text>--GO BACK--</text>
+                <postback>HELLO</postback>
+            </button>
+            
+            <button>
+                <text>ZipRecruiter Job Description page</text>
+                <url>https://www.ziprecruiter.com/Jobs/Technical-Program-Manager</url>
+            </button>
+            
+        </template>
+    </category>
+    
+</aiml>
