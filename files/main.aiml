@@ -30,7 +30,7 @@
     <!-- Displays the initial greeting and provides the user with options -->
     <category>
         <pattern>HELLO</pattern>
-        <template>Hello, I am the carreerbot1000. I assist users in many
+        <template>Hello, I am the careerbot1000. I assist users in many
         ways to ensure they can find the ideal career related to computer science.
         
         <button>
