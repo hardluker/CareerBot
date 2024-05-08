@@ -307,7 +307,7 @@
         </template>
     </category>
     
-    <!-- If the user selects Technical Program Manaer -->
+    <!-- If the user selects Technical Program Manager -->
     <category>
         <pattern>TECHNICALPROGRAMMANAGER</pattern>
         <template>
